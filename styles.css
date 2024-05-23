@@ -1,0 +1,262 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  font-family: 'Anonymous Pro', Courier, monospace;
+  font-weight: 800;
+  /* font-size: 16px; */
+  font-size: 2vh;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  line-height: 1;
+  background-color: #008080;
+}
+
+#main {
+  width: 100%;
+  height: 100vh;
+  z-index: 400;
+  top: 0;
+  left: 0;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+}
+
+#main-window {
+  /* height: 70%; */
+  width: 50%;
+  min-width: 500px;
+  max-width: 800px;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  padding-top: 1px;
+  /* justify-content: space-between; */
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.window-header {
+  color: white;
+  background: rgb(153, 170, 187);
+  background: linear-gradient(90deg, rgba(16, 132, 208, 1) 100%, rgba(153, 170, 187, 1) 0%);
+}
+
+.window-menu {
+  display: flex;
+}
+
+.window-menu-button {
+  cursor: pointer;
+  text-align: center;
+  box-sizing: border-box;
+  /* height: 18px; */
+  /* line-height: 1; */
+  margin-top: 1px;
+  margin-bottom: 1px;
+  padding: 2px 5px;
+  outline: 0;
+  background: rgb(192, 192, 192);
+  background: var(--Menu);
+}
+
+.window-menu-button::first-letter {
+  text-decoration: underline;
+}
+
+.window-menu-button:hover {
+  box-shadow: 1px 1px 0 rgb(255, 255, 255) inset, -1px -1px 0 rgb(128, 128, 128) inset;
+}
+
+.window-content {
+  flex: 1;
+  min-height: 0px;
+  contain: layout paint;
+  display: flex;
+}
+
+.inset-deep {
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(128, 128, 128) rgb(255, 255, 255) rgb(255, 255, 255) rgb(128, 128, 128);
+  background-color: rgb(192, 192, 192);
+  color: rgb(0, 0, 0);
+  position: relative;
+  border-image: var(--inset-deep-border-image);
+  border-color: rgb(128, 128, 128);
+  border-style: solid;
+  border-width: 2px 2px;
+  padding: 20px;
+  background: #fff;
+  color: #000;
+  user-select: text;
+  cursor: text;
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.inset-deep>div:first-child {
+  order: 1;
+  width: 70%;
+}
+
+.inset-deep>div:last-child {
+  order: 3;
+  width: 100%;
+  height: fit-content;
+}
+
+.profile-image-container {
+  order: 2;
+  width: 30%;
+}
+
+.text-button {
+  color: black;
+  text-decoration: none;
+}
+
+img {
+  height: 200px;
+  width: 200px;
+}
+
+::selection {
+  color: white;
+  background: rgb(0, 0, 128);
+}
+
+/*https://stackoverflow.com/questions/6370690/media-queries-how-to-target-desktop-tablet-and-mobile*/
+@media only screen and (max-device-width: 480px) {}
+@media only screen and (min-width:1900px) {}
