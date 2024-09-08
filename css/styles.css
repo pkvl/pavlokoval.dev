@@ -92,8 +92,8 @@ video {
   vertical-align: baseline;
   font-family: 'Anonymous Pro', Courier, monospace;
   font-weight: 800;
-  /* font-size: 16px; */
-  font-size: 2vh;
+  font-size: 16px;
+  /* font-size: 2vh; */
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -221,25 +221,20 @@ body {
   user-select: text;
   cursor: text;
   flex: 1;
-  display: flex;
-  flex-wrap: wrap;
+  /* display: flex; */
+  /* flex-wrap: wrap; */
   width: 100%;
 }
 
-.inset-deep>div:first-child {
-  order: 1;
+.bio-text {
+  /* order: 1; */
   width: 70%;
 }
 
-.inset-deep>div:last-child {
-  order: 3;
-  width: 100%;
-  height: fit-content;
-}
 
 .profile-image-container {
-  order: 2;
-  width: 30%;
+  padding-left: 5px;
+  ;
 }
 
 .text-button {
@@ -257,6 +252,50 @@ img {
   background: rgb(0, 0, 128);
 }
 
+.bio {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: stretch;
+  padding-right: 5px;
+}
+
 /*https://stackoverflow.com/questions/6370690/media-queries-how-to-target-desktop-tablet-and-mobile*/
-@media only screen and (max-device-width: 480px) {}
+@media only screen and (max-device-width: 480px) {
+  #main-window {
+    width: 90%;
+    min-width: 320px;
+    /* min-height: 90%; */
+  }
+
+  .inset-deep {
+    display: flex;
+    flex-direction: column;
+    justify-items: stretch;
+  }
+
+  .bio {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    padding-bottom: 20px;
+  }
+  
+  .bio-text {
+    order: 2;
+    width: 100%;
+  }
+
+  .profile-image-container {
+    display: flex;
+    width: 100%;
+    /* justify-content: center; */
+    align-items: center;
+    order: 1;
+    padding-bottom: 5px;
+    padding-left: 0;
+  }
+}
+
 @media only screen and (min-width:1900px) {}
