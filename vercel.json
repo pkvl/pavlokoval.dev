@@ -1,6 +1,10 @@
 {
   "redirects": [
     {
+      "source": "/index.php",
+      "destination": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    },
+    {
       "source": "/wp-admin.php",
       "destination": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
