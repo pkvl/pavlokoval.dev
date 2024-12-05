@@ -1,0 +1,24 @@
+---
+import { Image } from "astro:assets";
+import photo from "../assets/photo.webp";
+---
+<div class="bio">
+  <div class="bio-text">
+    <p>
+      Hi there! I'm Pavlo and I'm a front-end engineer based in Los
+      Angeles, CA. I like to build things using programming. You can reach
+      me either on Twitter (X) DM or Linkedin!
+    </p>
+  </div>
+  <div class="profile-image-container">
+    <Image
+      class="profile-image"
+      src={photo}
+      fetchpriority="high"
+      alt="Pavlo Koval"
+    />
+  </div>
+</div>
+<div>
+  <p>Sometimes I <a href="/posts">write things</a>.</p>
+</div>
