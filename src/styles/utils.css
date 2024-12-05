@@ -90,8 +90,8 @@ video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-  font-family: 'Anonymous Pro', Courier, monospace;
-  font-weight: 800;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  /* font-weight: 800; */
   font-size: 16px;
   /* font-size: 2vh; */
 }
@@ -142,19 +142,21 @@ body {
 #main {
   width: 100%;
   height: 100vh;
-  z-index: 400;
+  /* z-index: 1; */
   top: 0;
   left: 0;
   position: absolute;
   display: flex;
   justify-content: center;
+  box-sizing: border-box;
 }
 
 #main-window {
   /* height: 70%; */
-  width: 50%;
+  width: 35%;
   min-width: 500px;
-  max-width: 800px;
+  min-height: 315px;
+  /* max-width: 800px; */
   margin-right: auto;
   margin-left: auto;
   display: flex;
@@ -163,10 +165,26 @@ body {
   /* justify-content: space-between; */
   margin-top: auto;
   margin-bottom: auto;
+  position: absolute;
+  z-index: 9;
+  top: 30%;
+  resize: both;
+  overflow: auto;
+  box-sizing: border-box;
+  /* background-color: #f1f1f1; */
+  /* border: 1px solid #d3d3d3; */
+  /* text-align: center; */
+}
+
+#title-window {
+  cursor: move;
+  z-index: 10;
+
 }
 
 .window-header {
   color: white;
+  font-weight: 800;
   background: rgb(153, 170, 187);
   background: linear-gradient(90deg, rgba(16, 132, 208, 1) 100%, rgba(153, 170, 187, 1) 0%);
 }
@@ -177,6 +195,7 @@ body {
 
 .window-menu-button {
   cursor: pointer;
+  font-weight: 800;
   text-align: center;
   box-sizing: border-box;
   /* height: 18px; */
@@ -224,12 +243,15 @@ body {
   /* display: flex; */
   /* flex-wrap: wrap; */
   width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
-.bio-text {
-  /* order: 1; */
-  width: 70%;
-}
+/* .bio-text { */
+/* order: 1; */
+/* width: 70%; */
+/* } */
 
 
 .profile-image-container {
@@ -242,7 +264,7 @@ body {
   text-decoration: none;
 }
 
-img {
+img.profile-image {
   height: 200px;
   width: 200px;
 }
@@ -260,11 +282,41 @@ img {
   padding-right: 5px;
 }
 
+h3,
+h4 {
+  padding: 8px 0;
+  font-weight: bold;
+}
+
+li {
+  padding: 4px 0;
+}
+
+.post-title-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-description {
+  margin-top: 4px;
+  margin-bottom: 12px;
+  color: #2c2c2c;
+}
+
+.post-title {
+  width: 80%;
+}
+
+.post-date {
+  text-align: right;
+}
+
 /*https://stackoverflow.com/questions/6370690/media-queries-how-to-target-desktop-tablet-and-mobile*/
 @media only screen and (max-device-width: 480px) {
   #main-window {
     width: 90%;
     min-width: 320px;
+    top: 25%;
     /* min-height: 90%; */
   }
 
@@ -281,7 +333,7 @@ img {
     justify-content: stretch;
     padding-bottom: 20px;
   }
-  
+
   .bio-text {
     order: 2;
     width: 100%;

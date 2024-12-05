@@ -1,0 +1,35 @@
+---
+import Bio from "./Bio.astro";
+import { SOCIALS } from "../config";
+---
+
+<div class="window" id="main-window">
+	<div class="title-bar" id="title-window">
+		<div class="title-bar-text">Pavlo Koval</div>
+		<div class="title-bar-controls">
+			<button aria-label="Help"></button>
+			<button aria-label="Close"></button>
+		</div>
+	</div>
+	<div class="window-menu">
+		{
+			SOCIALS.map((social) => (
+				<div class="window-menu-button">
+					<a href={social.href} class="text-button">
+						{social.linkTitle}
+					</a>
+				</div>
+			))
+		}
+	</div>
+	<div class="window-content">
+		<div class="inset-deep">
+			<Bio />
+		</div>
+	</div>
+	<div class="status-bar">
+		<p class="status-bar-field" id="copyright"></p>
+		<p class="status-bar-field">Built with &lt;3</p>
+		<p class="status-bar-field"><a href="/index.php">Page Source</a></p>
+	</div>
+</div>
