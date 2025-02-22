@@ -1,0 +1,21 @@
+.footer {
+  font-family: 'Space Grotesk Variable', sans-serif;
+  font-size: 18px;
+  padding-block: 50px;
+  padding-inline: calc(50% - 630px);
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: repeat(3, auto);
+  justify-content: space-between;
+  border-block-start: 3px solid orange;
+}
+
+.footer__block {
+  display: grid;
+  align-content: space-between;
+}
+
+
+.footer__block:last-child {
+  align-content: end;
+}

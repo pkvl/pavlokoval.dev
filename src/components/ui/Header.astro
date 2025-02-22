@@ -1,0 +1,31 @@
+---
+import { Image } from "astro:assets";
+import photo from "../../assets/photo.webp";
+---
+
+<header class="header">
+  <nav class="menu">
+    <a class="header__link" href="/">
+      <Image class="header__image" src={photo} alt="Home" />
+    </a>
+    <ul class="menu__list">
+      <li><a href="/">home</a></li>
+      <li><a href="/posts">blog</a></li>
+      <li><a href="/projects">projects</a></li>
+      <li><a href="/about">about</a></li>
+    </ul>
+
+    <section class="theme-switcher" aria-label="Color theme switcher">
+      <button class="theme-switcher__button" aria-pressed="false" value="light">
+        light
+      </button>
+      <button class="theme-switcher__button" aria-pressed="true" value="auto">
+        auto
+      </button>
+      <button class="theme-switcher__button" aria-pressed="false" value="dark">
+        dark
+      </button>
+      <div class="theme-switcher__status"></div>
+    </section>
+  </nav>
+</header>

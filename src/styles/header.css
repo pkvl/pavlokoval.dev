@@ -1,0 +1,68 @@
+.header {
+  font-family: 'Space Grotesk Variable', sans-serif;
+  font-size: 24px;
+  position: sticky;
+  top: 0;
+  background-color: var(--color-background);
+  /* background-color: var(--orange-4); */
+  /* background-image: linear-gradient(180deg, var(--orange-4), var(--color-background)); */
+  padding-block: 50px;
+  padding-inline: calc(50% - 630px);
+  border-block-end: 3px solid orange;
+}
+
+.header__link {
+  display: block;
+  border-radius: 50%;
+}
+
+.header__image {
+  border-radius: 50%;
+  display: block;
+  width: 50px;
+  height: 50px;
+  transition: opacity 0.1s linear 0.1s;
+}
+
+.header__image:hover {
+  opacity: 50%;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu ul {
+  display: flex;
+  gap: 24px;
+}
+
+.theme-switcher {
+  display: flex;
+  padding: 2px;
+  /* border: 2px solid var(--orange-9); */
+  /* border-radius: 24px; */
+}
+
+.theme-switcher__button {
+  text-decoration: underline;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  padding-inline: 16px;
+  border: none;
+  border-radius: 24px;
+  background-color: transparent;
+  color: var(--orange-9);
+  line-height: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  transition: color 0.1s linear 0.1s, background-color 0.1s linear 0.1s;
+}
+
+.theme-switcher__button:hover {
+  color: var(--orange-contrast);
+  background-color: var(--orange-9);
+}

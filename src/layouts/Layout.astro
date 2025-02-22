@@ -1,93 +1,38 @@
 ---
-import Analytics from '@vercel/analytics/astro'
-import '../styles/98.css';
-import '../styles/utils.css';
+import Analytics from "@vercel/analytics/astro";
+import Header from "../components/ui/Header.astro";
+import Footer from "../components/ui/Footer.astro";
+
+import "../styles/main.css";
+import "@fontsource-variable/jetbrains-mono";
+import "@fontsource-variable/inter";
+import "@fontsource-variable/space-grotesk";
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/png" href="/favicon.png" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Pavlo Koval</title>
-	</head>
-	<body>
-		<div id="main">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Pavlo Koval</title>
+  </head>
+  <body>
+    <Header />
+    <main id="main">
       <slot />
-      <Analytics/>
-		</div>
-	</body>
+    </main>
+    <Footer />
+    <Analytics />
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
 </style>
-
-<script>
-	dragElement(document.getElementById("main-window"));
-
-	function dragElement(elmnt: any) {
-		let pos1 = 0,
-			pos2 = 0,
-			pos3 = 0,
-			pos4 = 0;
-		const titleEl = document.getElementById("title-window");
-		if (titleEl) {
-			// if present, the header is where you move the DIV from:
-			titleEl.onmousedown = dragMouseDown;
-		} else {
-			// otherwise, move the DIV from anywhere inside the DIV:
-			elmnt.onmousedown = dragMouseDown;
-		}
-
-		function dragMouseDown(e: any) {
-			e = e || window.event;
-			e.preventDefault();
-			// get the mouse cursor position at startup:
-			pos3 = e.clientX;
-			pos4 = e.clientY;
-			document.onmouseup = closeDragElement;
-			// call a function whenever the cursor moves:
-			document.onmousemove = elementDrag;
-		}
-
-		function elementDrag(e: any) {
-			e = e || window.event;
-			e.preventDefault();
-			// calculate the new cursor position:
-
-			pos1 = pos3 - e.clientX;
-			pos2 = pos4 - e.clientY;
-			pos3 = e.clientX;
-			pos4 = e.clientY;
-
-			// set the element's new position:
-			if (
-				elmnt.offsetTop - pos2 > 0 &&
-				elmnt.offsetTop - pos2 < window.innerHeight - elmnt.offsetHeight
-			) {
-				elmnt.style.top = elmnt.offsetTop - pos2 + "px";
-			}
-			if (
-				elmnt.offsetLeft - pos1 > 0 &&
-				elmnt.offsetLeft - pos1 < window.innerWidth - elmnt.offsetWidth
-			) {
-				elmnt.style.left = elmnt.offsetLeft - pos1 + "px";
-			}
-			// console.log(pos1, pos2, pos3, pos4);
-		}
-
-		function closeDragElement() {
-			// stop moving when mouse button is released:
-			document.onmouseup = null;
-			document.onmousemove = null;
-		}
-	}
-</script>

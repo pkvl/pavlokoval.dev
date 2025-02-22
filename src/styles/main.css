@@ -1,0 +1,130 @@
+/* @import "./reset.css"; */
+@import "./colors.css";
+@import "./header.css";
+@import "./footer.css";
+
+:root {
+  --font-family-text: 'Inter Variable', sans-serif;
+  --font-family-heading: 'Space Grotesk Variable', sans-serif;
+  --font-family-code: 'JetBrains Mono', monospace;
+
+  --font-size-small: 1rem;
+  --font-size-normal: 1.25rem;
+  --font-size-h3: 2rem;
+  --font-size-h2: 3.5rem;
+  --font-size-h1: 5rem;
+  --font-size-shout: 9rem;
+
+  @supports (font-variation-settings: normal) {
+    --font-family-text: 'Inter Variable', sans-serif;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-background);
+}
+
+main {
+  font-family: var(--font-family-text);
+  padding-block: 50px;
+  padding-inline: calc(50% - 630px);
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: var(--orange-9);
+  transition: color 0.1s linear 0.1s;
+}
+
+a:hover {
+  color: var(--orange-11);
+}
+
+h1 {
+  font-size: var(--font-family-h1);
+  font-weight: 800;
+}
+
+h2 {
+  font-size: var(--font-family-h2);
+  font-weight: 800;
+}
+
+h3 {
+  font-size: var(--font-family-h3);
+  font-weight: 800;
+}
+
+h4 {
+  font-size: var(--font-family-normal);
+  font-weight: bold;
+  display: block;
+  margin-top: 1.33em;
+  margin-bottom: 1.33em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+
+.profile-image {
+  border-radius: 50%;
+}
+
+.bio {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "photo content";
+  grid-template-columns: 1fr 6fr;
+}
+
+.bio__title {
+  grid-area: header;
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-h1);
+}
+
+.bio__photo {
+  grid-area: photo;
+  margin-inline-end: 15px;
+}
+
+.bio__text {
+  grid-area: content;
+  margin-block: 15px;
+  align-content: end;
+
+}
+
+.bio__text>p {
+  margin: 0
+}
+
+.bio__text-small {
+  font-size: var(--font-size-normal);
+  margin: 0;
+}
+
+.bio__text-name {
+  margin: 0;
+  /* position: relative; */
+  /* z-index: 2; */
+  /* margin-inline-start: 30px; */
+  /* margin-block-end: -20px; */
+}
+
+.text {}
