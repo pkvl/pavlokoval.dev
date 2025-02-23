@@ -1,8 +1,8 @@
 .footer {
-  font-family: 'Space Grotesk Variable', sans-serif;
-  font-size: 18px;
+  font-family: "Space Grotesk Variable", sans-serif;
+  font-size: var(--font-size-normal);
   padding-block: 50px;
-  padding-inline: calc(50% - 630px);
+  /* padding-inline: calc(50% - 630px); */
   display: grid;
   column-gap: 20px;
   grid-template-columns: repeat(3, auto);
@@ -10,12 +10,20 @@
   border-block-start: 3px solid orange;
 }
 
+.footer li {
+  list-style-type: none;
+}
+
+
 .footer__block {
   display: grid;
   align-content: space-between;
 }
 
-
 .footer__block:last-child {
   align-content: end;
+}
+
+.footer__block:last-child>h4 {
+  margin: 0;
 }

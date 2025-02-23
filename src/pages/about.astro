@@ -1,4 +1,5 @@
 ---
+import { Code } from "astro:components";
 import BlogContainer from "../components/BlogContainer.astro";
 import Layout from "../layouts/Layout.astro";
 
@@ -6,4 +7,64 @@ import Layout from "../layouts/Layout.astro";
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout> This is About page </Layout>
+<Layout>
+  <h1>H1 Heading</h1>
+  <h2>H2 Heading</h2>
+  <h3>H3 Heading</h3>
+  <h4>H4 Heading</h4>
+  <p>This is a paragraph.</p>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </p>
+  <table>
+    <thead>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Location</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Pavlo</td>
+        <td>Los Angeles, CA</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Susie</td>
+        <td>Los Angeles, CA</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Arthas</td>
+        <td>Los Angeles, CA</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ul>
+    <li>first</li>
+    <li>second</li>
+    <li>third</li>
+  </ul>
+
+  <ol>
+    <li>one</li>
+    <li>two</li>
+    <li>three</li>
+  </ol>
+
+  <blockquote>This is what I said!</blockquote>
+  <p>The HTML <code>button</code> tag defines a clickable button.</p>
+
+  <p>
+    The CSS <code>background-color</code> property defines the background color of
+    an element.
+  </p>
+
+  <Code code={`const foo = 'bar';`} lang="js" theme="catppuccin-latte" />
+</Layout>

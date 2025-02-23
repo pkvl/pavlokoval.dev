@@ -1,16 +1,28 @@
 ---
 import { Image } from "astro:assets";
 import photo from "../../assets/photo.webp";
+import expand from "../../assets/align-justify.svg";
 ---
 
-<header class="header">
-  <nav class="menu">
+<header class="header column">
+  <button
+    class="header__button action action--hover"
+    type="button"
+    id="toggle"
+    aria-expanded="false"
+    aria-controls="menu"
+    aria-label="Toggle menu"
+  >
+    <Image src={expand} alt="expand" />
+  </button>
+
+  <nav class="menu menu--closed" id="menu">
     <a class="header__link" href="/">
       <Image class="header__image" src={photo} alt="Home" />
     </a>
     <ul class="menu__list">
       <li><a href="/">home</a></li>
-      <li><a href="/posts">blog</a></li>
+      <li><a href="/posts">posts</a></li>
       <li><a href="/projects">projects</a></li>
       <li><a href="/about">about</a></li>
     </ul>
@@ -29,3 +41,15 @@ import photo from "../../assets/photo.webp";
     </section>
   </nav>
 </header>
+
+<script>
+  const toggleButton = document.querySelector("button#toggle");
+  const navMenu = document.querySelector("nav#menu");
+  console.log();
+  toggleButton?.addEventListener("click", () => {
+    const list = navMenu?.classList;
+    list?.toggle("menu--closed");
+    list?.toggle("menu--open");
+    toggleButton.innerHTML = toggleButton.innerHTML === "O" ? "X" : "O";
+  });
+</script>
