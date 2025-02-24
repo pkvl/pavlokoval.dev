@@ -2,9 +2,9 @@
   <button class="theme-switcher__button" aria-pressed="false" value="light">
     light
   </button>
-  <button class="theme-switcher__button" aria-pressed="false" value="auto">
+  <!-- <button class="theme-switcher__button" aria-pressed="false" value="auto">
     auto
-  </button>
+  </button> -->
   <button class="theme-switcher__button" aria-pressed="false" value="dark">
     dark
   </button>
@@ -16,12 +16,7 @@
 
   const theme = (() => {
     const localStorageTheme = localStorage?.getItem("theme") ?? "";
-    const currentThemeBtn = document.querySelector(
-      `.theme-switcher__button[value=${localStorageTheme}]`,
-    );
-    console.log(currentThemeBtn);
     toggleButtonStyle(localStorageTheme);
-    // currentThemeBtn.setAttribute("aria-pressed", true);
     if (["dark", "light"].includes(localStorageTheme)) {
       return localStorageTheme;
     }
@@ -62,14 +57,17 @@
   function toggleButtonStyle(localStorageTheme) {
     for (let i = 0; i < themeBtns.length; i++) {
       const themeBtn = themeBtns[i];
+      if (localStorageTheme === "" && themeBtn.value === "auto") {
+        themeBtn.setAttribute("aria-pressed", "true");
+      }
       themeBtn.setAttribute(
         "aria-pressed",
-        localStorageTheme === themeBtn.value ? "true" : "false",
+        localStorageTheme === ""
+          ? themeBtn.value === "auto"
+          : themeBtn.value === localStorageTheme
+            ? "true"
+            : "false"
       );
     }
   }
-
-  // document
-  //   .getElementById("themeToggle")
-  //   ?.addEventListener("click", handleToggleClick);
 </script>
