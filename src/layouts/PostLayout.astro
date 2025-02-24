@@ -1,0 +1,29 @@
+---
+import Layout from "./Layout.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout>
+  <div class="content-metadata">
+    <h1 class="content-metadata-title">{frontmatter.title}</h1>
+    <div class="content-metadata-pubdate">
+      <p>
+        <time>{frontmatter.pubDate.toString()}</time>
+      </p>
+      <!-- <p>
+        Updated on: <time>{frontmatter.editDate.toString()}</time>
+      </p> -->
+    </div>
+  </div>
+  <slot />
+  <div class="content-metadata-tags">
+    <h4>tags:</h4>{
+      frontmatter.tags.map((tag: any) => (
+        <div class="content-block">
+          <a class="tag-button ">{tag}</a>
+        </div>
+      ))
+    }
+  </div>
+</Layout>

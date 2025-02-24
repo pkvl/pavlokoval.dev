@@ -6,7 +6,9 @@
   z-index: 2;
   background-color: var(--color-background);
   padding-block: 24px;
-  border-block-end: 3px solid orange;
+  border-block-end: 3px solid var(--orange-10);
+  display: grid;
+  grid-template-columns: 1fr 2fr;
 }
 
 .header__link {
@@ -94,11 +96,17 @@
   transition:
     color 0.1s linear 0.1s,
     background-color 0.1s linear 0.1s;
+
+  &[aria-pressed='true'] {
+    border: 2px solid var(--orange-10);
+  }
 }
+
+
 
 .theme-switcher__button:hover {
   color: var(--orange-contrast);
-  background-color: var(--orange-9);
+  background-color: var(--orange-10);
 }
 
 .column {
@@ -122,7 +130,8 @@
 @media (width < 1024px) {
 
   .header {
-    display: grid;
+    display: flex;
+    justify-content: space-between;
   }
 
   .header__button {
@@ -132,6 +141,10 @@
     position: relative;
     z-index: 2;
     text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--gray-12);
 
     &[aria-expanded='false'] {
 
@@ -148,10 +161,15 @@
         display: none;
       }
     }
+
+    .colored {
+      color: var(--orange-10);
+    }
   }
 
   .header__image {
     grid-area: auto;
+    z-index: 3;
   }
 
   .menu {
@@ -159,13 +177,15 @@
     inset: 0;
     z-index: 1;
     display: grid;
-    grid-template-rows:
-      min-content 1fr min-content;
+    grid-template-rows: 2fr min-content;
+    justify-content: center;
     padding: 20px;
     background-color: var(--orange-3);
     transform: translateX(-100%) scaleX(0.3);
     view-transition-name: menu;
     contain: layout;
+    border: 10px dashed var(--orange-10);
+    font-size: var(--font-size-h3);
 
     @media (prefers-reduced-motion: no-preference) {
       transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
@@ -175,6 +195,12 @@
   .menu ul {
     display: flex;
     flex-direction: column;
+    align-items: center;
+  }
+
+  .menu li {
+    font-size: var(--font-size-h3);
+    /* TODO: add font sizing for mobile, to remove */
   }
 
   .menu--closed {
@@ -183,5 +209,15 @@
 
   .menu--open {
     transform: translateX(0) scaleX(1);
+  }
+
+  #icon {
+    display: inline-block;
+    transition: transform 0.4s ease-in-out;
+    color: var(--orange-10);
+  }
+
+  .rotated {
+    transform: rotate(180deg);
   }
 }

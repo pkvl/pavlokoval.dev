@@ -3,6 +3,7 @@ export type Site = {
   author: string;
   desc: string;
   title: string;
+  email: string;
 };
 
 export type SocialObjects = {

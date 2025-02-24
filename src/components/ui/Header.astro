@@ -1,7 +1,8 @@
 ---
 import { Image } from "astro:assets";
 import photo from "../../assets/photo.webp";
-import expand from "../../assets/align-justify.svg";
+import Arrow from "../../assets/arrow.svg";
+import ThemeSwitcher from "./ThemeSwitcher.astro";
 ---
 
 <header class="header column">
@@ -13,43 +14,60 @@ import expand from "../../assets/align-justify.svg";
     aria-controls="menu"
     aria-label="Toggle menu"
   >
-    <Image src={expand} alt="expand" />
+    <Arrow id="icon" />
+    Menu
   </button>
-
+  <a class="header__link" href="/">
+    <Image class="header__image" src={photo} alt="Home" />
+  </a>
   <nav class="menu menu--closed" id="menu">
-    <a class="header__link" href="/">
-      <Image class="header__image" src={photo} alt="Home" />
-    </a>
     <ul class="menu__list">
       <li><a href="/">home</a></li>
       <li><a href="/posts">posts</a></li>
       <li><a href="/projects">projects</a></li>
       <li><a href="/about">about</a></li>
     </ul>
-
-    <section class="theme-switcher" aria-label="Color theme switcher">
-      <button class="theme-switcher__button" aria-pressed="false" value="light">
-        light
-      </button>
-      <button class="theme-switcher__button" aria-pressed="true" value="auto">
-        auto
-      </button>
-      <button class="theme-switcher__button" aria-pressed="false" value="dark">
-        dark
-      </button>
-      <div class="theme-switcher__status"></div>
-    </section>
+    <ThemeSwitcher />
   </nav>
 </header>
 
 <script>
   const toggleButton = document.querySelector("button#toggle");
   const navMenu = document.querySelector("nav#menu");
-  console.log();
+  const headerLink = document.querySelector(".header__link");
+
+  function isMenuOpen() {
+    return toggleButton?.getAttribute("aria-expanded") === "true";
+  }
+
+  function closeMenu() {
+    toggleButton?.setAttribute("aria-expanded", "false");
+    headerLink?.removeAttribute("tabindex");
+    navMenu?.classList.remove("menu--open");
+    navMenu?.addEventListener(
+      "transitionend",
+      () => {
+        if (!navMenu?.classList.contains("menu--open")) {
+          navMenu?.classList.add("menu--closed");
+        }
+      },
+      {
+        once: true,
+      }
+    );
+  }
+
+  function openMenu() {
+    toggleButton?.setAttribute("aria-expanded", "true");
+    headerLink?.setAttribute("tabindex", "-1");
+    navMenu?.classList.remove("menu--closed");
+    setTimeout(() => {
+      navMenu?.classList.add("menu--open");
+    }, 20);
+  }
+
   toggleButton?.addEventListener("click", () => {
-    const list = navMenu?.classList;
-    list?.toggle("menu--closed");
-    list?.toggle("menu--open");
-    toggleButton.innerHTML = toggleButton.innerHTML === "O" ? "X" : "O";
+    document.getElementById("icon")?.classList.toggle("rotated");
+    return isMenuOpen() ? closeMenu() : openMenu();
   });
 </script>

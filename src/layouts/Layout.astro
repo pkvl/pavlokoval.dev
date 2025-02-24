@@ -7,6 +7,7 @@ import "@fontsource-variable/jetbrains-mono";
 import "@fontsource-variable/inter";
 import "@fontsource-variable/space-grotesk";
 import "../styles/global.css";
+import { SITE } from "../config";
 ---
 
 <!doctype html>
@@ -16,7 +17,8 @@ import "../styles/global.css";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
-    <title>Pavlo Koval</title>
+    <meta name="description" content={SITE.desc} />
+    <title>{SITE.title}</title>
   </head>
   <body>
     <Header />
@@ -27,12 +29,3 @@ import "../styles/global.css";
     <Analytics />
   </body>
 </html>
-<!-- 
-<style>
-  html,
-  body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-  }
-</style> -->

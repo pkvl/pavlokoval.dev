@@ -1,28 +1,31 @@
 ---
 import { Image } from "astro:assets";
 import photo from "../assets/real_photo.jpg";
+import { SITE } from "../config";
 ---
 
-<div class="bio">
-  <div class="bio__title">
-    <p class="bio__text-small">hello there, my name is</p>
-    <h1 class="bio__text-name">PAVLO KOVAL</h1>
-  </div>
-  <div class="bio__photo">
-    <Image
-      class="profile-image"
-      src={photo}
-      fetchpriority="high"
-      alt="Pavlo Koval"
-    />
-  </div>
-  <div class="bio__text">
-    <!-- <p>Hello there, my name is</p>
-    <p>PAVLO KOVAL</p> -->
-    <p>
-      I'm a software engineer based in Los Angeles, CA. I like to build things
-      using programming. You can reach me either on Twitter (X) DM or Linkedin!
-    </p>
-    <p>Sometimes I <a href="/posts">write things</a>.</p>
+<div class="content-block">
+  <div class="bio">
+    <h1 class="page-heading">{SITE.title}</h1>
+
+    <div class="page-hello">hello there, my name is</div>
+
+    <div class="page-image">
+      <Image
+        class="profile-image"
+        src={photo}
+        fetchpriority="high"
+        alt="Pavlo Koval"
+      />
+    </div>
+
+    <div class="page-desc">
+      <div class="content-block">
+        <h2 class="content">I'm a software engineer</h2>
+        based in Los Angeles, CA. I like to build things using programming. You can
+        reach me either on Twitter (X) DM or Linkedin!
+      </div>
+      <div><h3>Sometimes I <a href="/posts">write things</a>.</h3></div>
+    </div>
   </div>
 </div>

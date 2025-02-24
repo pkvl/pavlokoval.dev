@@ -3,8 +3,9 @@ import type { Site, SocialObjects } from "./types";
 export const SITE: Site = {
   website: "https://pavlokoval.dev/",
   author: "Pavlo Koval",
-  desc: "Pavlo Koval - software engineer",
+  desc: "Software Engineer with a Frontend focus.",
   title: "Pavlo Koval",
+  email: "me@pavlokoval.dev",
 };
 
 export const LOCALE = {
@@ -27,5 +28,10 @@ export const SOCIALS: SocialObjects = [
     name: "X",
     href: "https://x.com/thisispavlodev",
     linkTitle: `Twitter(X)`,
+  },
+  {
+    name: "BlueSky",
+    href: "https://bsky.app",
+    linkTitle: "BlueSky",
   },
 ];

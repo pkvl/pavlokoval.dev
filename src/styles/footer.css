@@ -7,7 +7,7 @@
   column-gap: 20px;
   grid-template-columns: repeat(3, auto);
   justify-content: space-between;
-  border-block-start: 3px solid orange;
+  border-block-start: 3px solid var(--orange-10);
 }
 
 .footer li {
@@ -26,4 +26,11 @@
 
 .footer__block:last-child>h4 {
   margin: 0;
+}
+
+@media (width < 1024px) {
+  .footer {
+    grid-template-columns: repeat(1, auto);
+    gap: 40px;
+  }
 }
