@@ -19,7 +19,7 @@ const { frontmatter } = Astro.props;
   <slot />
   <div class="content-metadata-tags">
     <h4>tags:</h4>{
-      frontmatter.tags.map((tag: any) => (
+      frontmatter.tags?.map((tag: any) => (
         <div class="content-block">
           <a class="tag-button ">{tag}</a>
         </div>
