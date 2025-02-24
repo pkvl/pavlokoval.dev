@@ -2,7 +2,6 @@
   font-family: "Space Grotesk Variable", sans-serif;
   font-size: var(--font-size-normal);
   padding-block: 50px;
-  /* padding-inline: calc(50% - 630px); */
   display: grid;
   column-gap: 20px;
   grid-template-columns: repeat(3, auto);
@@ -23,7 +22,7 @@
   align-content: end;
 }
 
-.footer__block:last-child > h4 {
+.footer__block:last-child>h4 {
   margin: 0;
 }
 

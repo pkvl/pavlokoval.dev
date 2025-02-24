@@ -148,9 +148,6 @@ pre {
 
   .astro-code,
   .astro-code span {
-    /* color: var(--shiki-dark) !important; */
-    /* background-color: var(--shiki-dark-bg) !important; */
-    /* Optional, if you also want font styles */
     font-style: var(--font-family-code) !important;
     font-weight: var(--shiki-dark-font-weight) !important;
     text-decoration: var(--shiki-dark-text-decoration) !important;
@@ -167,6 +164,7 @@ pre {
 /* Headings */
 
 .content-block {
+
   h1,
   h2,
   h3 {
@@ -217,6 +215,7 @@ pre {
 /* Lists */
 
 .content-block {
+
   ol,
   ul {
     display: grid;
@@ -229,6 +228,7 @@ pre {
 
   ol,
   ul {
+
     ol,
     ul {
       margin-block: 8px 4px;
@@ -279,6 +279,7 @@ pre {
 /* Images, Videos, Frames */
 
 .content-block {
+
   img,
   video,
   iframe {
@@ -318,8 +319,8 @@ pre {
   }
 }
 
-.content-block li > code,
-p > code {
+.content-block li>code,
+p>code {
   box-decoration-break: clone;
   color: var(--orange-11) !important;
   background-color: var(--orange-2);
@@ -330,6 +331,7 @@ p > code {
 }
 
 .content-block {
+
   table,
   td,
   th {
@@ -391,11 +393,6 @@ p > code {
 
 .post-block {
   display: grid;
-  /* border: 1px solid var(--orange-3); */
-  /* border-radius: 15px; */
-  /* width: max-content; */
-  /* background-color: var(--orange-3); */
-  /* grid-template-areas: ; */
   padding-inline: 15px;
   padding-block: 15px;
   margin-block: 10px;

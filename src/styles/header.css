@@ -30,10 +30,10 @@
   animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
-  /* perspective: 1000px; */
 }
 
 @keyframes shake {
+
   10%,
   90% {
     transform: translate3d(-1px, 0, 0);
@@ -74,8 +74,6 @@
 .theme-switcher {
   display: flex;
   padding: 2px;
-  /* border: 2px solid var(--orange-9); */
-  /* border-radius: 24px; */
 }
 
 .theme-switcher__button {
@@ -140,6 +138,7 @@
     color: var(--gray-12);
 
     &[aria-expanded="false"] {
+
       .header__icon-close,
       .header__text-close {
         display: none;
@@ -147,6 +146,7 @@
     }
 
     &[aria-expanded="true"] {
+
       .header__icon-menu,
       .header__text-menu {
         display: none;
@@ -191,7 +191,6 @@
 
   .menu li {
     font-size: var(--font-size-h3);
-    /* TODO: add font sizing for mobile, to remove */
   }
 
   .menu--closed {
