@@ -48,7 +48,6 @@
 
 @supports (color: color(display-p3 1 1 1)) {
   @media (color-gamut: p3) {
-
     :root,
     .light,
     .light-theme {
@@ -115,7 +114,7 @@
   --gray-a11: #0000009b;
   --gray-a12: #000000df;
 
-  --gray-contrast: #FFFFFF;
+  --gray-contrast: #ffffff;
   --gray-surface: #ffffffcc;
   --gray-indicator: #8d8d8d;
   --gray-track: #8d8d8d;
@@ -123,7 +122,6 @@
 
 @supports (color: color(display-p3 1 1 1)) {
   @media (color-gamut: p3) {
-
     :root,
     .light,
     .light-theme {
@@ -153,7 +151,7 @@
       --gray-a11: color(display-p3 0 0 0 / 0.6078);
       --gray-a12: color(display-p3 0 0 0 / 0.8745);
 
-      --gray-contrast: #FFFFFF;
+      --gray-contrast: #ffffff;
       --gray-surface: color(display-p3 1 1 1 / 80%);
       --gray-indicator: oklch(64.4% 0 none);
       --gray-track: oklch(64.4% 0 none);
@@ -197,7 +195,6 @@
 
 @supports (color: color(display-p3 1 1 1)) {
   @media (color-gamut: p3) {
-
     .dark,
     .dark-theme {
       --orange-1: oklch(17.8% 0.0098 62.64);
@@ -270,7 +267,6 @@
 
 @supports (color: color(display-p3 1 1 1)) {
   @media (color-gamut: p3) {
-
     .dark,
     .dark-theme {
       --gray-1: oklch(17.8% 0 none);

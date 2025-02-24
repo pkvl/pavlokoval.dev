@@ -17,7 +17,7 @@
   const theme = (() => {
     const localStorageTheme = localStorage?.getItem("theme") ?? "";
     const currentThemeBtn = document.querySelector(
-      `.theme-switcher__button[value=${localStorageTheme}]`
+      `.theme-switcher__button[value=${localStorageTheme}]`,
     );
     console.log(currentThemeBtn);
     toggleButtonStyle(localStorageTheme);
@@ -64,7 +64,7 @@
       const themeBtn = themeBtns[i];
       themeBtn.setAttribute(
         "aria-pressed",
-        localStorageTheme === themeBtn.value ? "true" : "false"
+        localStorageTheme === themeBtn.value ? "true" : "false",
       );
     }
   }
