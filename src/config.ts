@@ -1,10 +1,11 @@
-import type { Site, SocialObjects } from "./types";
+import type { Site, LinkObject } from "./types";
 
 export const SITE: Site = {
   website: "https://pavlokoval.dev/",
   author: "Pavlo Koval",
-  desc: "Pavlo Koval - software engineer",
+  desc: "Software Engineer with a Frontend focus.",
   title: "Pavlo Koval",
+  email: "me@pavlokoval.dev",
 };
 
 export const LOCALE = {
@@ -12,7 +13,26 @@ export const LOCALE = {
   langTag: ["en-EN"],
 } as const;
 
-export const SOCIALS: SocialObjects = [
+// export const HEADER_MENU: LinkObject = [
+// {
+//   linkTitle: "home",
+//   href: "/",
+// },
+// {
+//   linkTitle: "posts",
+//   href: "/posts",
+// },
+// {
+//   linkTitle: "projects",
+//   href: "/projects",
+// },
+// {
+//   linkTitle: "about",
+//   href: "/about",
+// },
+// ];
+
+export const SOCIALS: LinkObject = [
   {
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/pavlo-k-aa3813b3/",
@@ -28,4 +48,9 @@ export const SOCIALS: SocialObjects = [
     href: "https://x.com/thisispavlodev",
     linkTitle: `Twitter(X)`,
   },
+  // {
+  //   name: "BlueSky",
+  //   href: "https://bsky.app",
+  //   linkTitle: "BlueSky",
+  // },
 ];

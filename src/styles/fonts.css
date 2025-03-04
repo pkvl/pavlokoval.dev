@@ -1,0 +1,16 @@
+:root {
+  --font-family-text: "Inter Variable", sans-serif;
+  --font-family-heading: "Space Grotesk Variable", sans-serif;
+  --font-family-code: "JetBrains Mono", monospace;
+
+  --font-size-small: 1rem;
+  --font-size-normal: 1.25rem;
+  --font-size-h3: 2rem;
+  --font-size-h2: 3.5rem;
+  --font-size-h1: 5rem;
+  --font-size-shout: 9rem;
+
+  @supports (font-variation-settings: normal) {
+    --font-family-text: "Inter Variable", sans-serif;
+  }
+}

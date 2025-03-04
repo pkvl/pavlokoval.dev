@@ -1,8 +1,8 @@
 ---
-layout: '../../layouts/BlogPostLayout.astro'
-title: 'The greatest post of all time'
-author: 'Ben'
-date: "Jul 27, 2021"
+layout: "../../layouts/PostLayout.astro"
+title: "The greatest post of all time"
+author: "Ben"
+pubDate: "January 12, 2025"
 description: "Some description."
 ---
 

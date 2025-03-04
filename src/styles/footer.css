@@ -1,0 +1,34 @@
+.footer {
+  font-family: "Space Grotesk Variable", sans-serif;
+  font-size: var(--font-size-normal);
+  padding-block: 50px;
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: repeat(3, auto);
+  justify-content: space-between;
+  border-block-start: 3px solid var(--orange-10);
+}
+
+.footer li {
+  list-style-type: none;
+}
+
+.footer__block {
+  display: grid;
+  align-content: space-between;
+}
+
+.footer__block:last-child {
+  align-content: end;
+}
+
+.footer__block:last-child>h4 {
+  margin: 0;
+}
+
+@media (width < 1024px) {
+  .footer {
+    grid-template-columns: repeat(1, auto);
+    gap: 40px;
+  }
+}

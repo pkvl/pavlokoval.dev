@@ -1,0 +1,23 @@
+---
+import { SITE, SOCIALS } from "../../config";
+---
+
+<footer class="footer column">
+  <div class="footer__block">
+    <h4>links</h4>
+    <ul>
+      {
+        SOCIALS.map((social) => (
+          <li>
+            <a href={social.href}>{social.linkTitle}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+  <div class="footer__block">
+    <h4>email</h4>
+    <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+  </div>
+  <div class="footer__block"><h4>made with ❤️ by me.</h4></div>
+</footer>
