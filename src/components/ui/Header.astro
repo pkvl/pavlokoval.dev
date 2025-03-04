@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import photo from "../../assets/photo.webp";
 import Arrow from "../../assets/arrow.svg";
 import ThemeSwitcher from "./ThemeSwitcher.astro";
+// import { HEADER_MENU } from "../../config";
 ---
 
 <header class="header column">
@@ -22,10 +23,13 @@ import ThemeSwitcher from "./ThemeSwitcher.astro";
   </a>
   <nav class="menu menu--closed" id="menu">
     <ul class="menu__list">
-      <li><a href="/">home</a></li>
-      <li><a href="/posts">posts</a></li>
-      <li><a href="/projects">projects</a></li>
-      <li><a href="/about">about</a></li>
+      <!-- {
+        HEADER_MENU.map((menu) => (
+          <li>
+            <a href={menu.href}>{menu.linkTitle}</a>
+          </li>
+        ))
+      } -->
     </ul>
     <ThemeSwitcher />
   </nav>

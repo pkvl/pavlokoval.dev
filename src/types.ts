@@ -6,7 +6,7 @@ export type Site = {
   email: string;
 };
 
-export type SocialObjects = {
+export type LinkObject = {
   name: string;
   href: string;
   linkTitle: string;
